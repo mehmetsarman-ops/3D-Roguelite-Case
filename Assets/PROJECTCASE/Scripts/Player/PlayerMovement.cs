@@ -253,10 +253,6 @@ namespace RogueliteGame.Player
 
         private void LateUpdate()
         {
-            if (healthBarRoot == null) return;
-            if (mainCamera == null) mainCamera = UnityEngine.Camera.main;
-            if (mainCamera != null)
-                healthBarRoot.forward = mainCamera.transform.forward;
         }
 
         private void OnDisable()
@@ -1000,6 +996,7 @@ namespace RogueliteGame.Player
             fillRect.offsetMax = Vector2.zero;
 
             healthBarRoot = canvasGO.transform;
+            canvasGO.AddComponent<RogueliteGame.UI.BillboardToCamera>();
 
             SetupActiveSkillIconDisplay();
         }

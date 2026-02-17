@@ -64,3 +64,6 @@ crashlytics-build.properties
 
 # JetBrains Rider
 .idea/
+
+# Unity build cache
+.utmp/

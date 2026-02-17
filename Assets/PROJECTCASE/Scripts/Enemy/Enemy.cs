@@ -101,12 +101,6 @@ namespace RogueliteGame.Enemy
 
         private void LateUpdate()
         {
-            if (mainCamera == null)
-                mainCamera = UnityEngine.Camera.main;
-            if (healthBarRoot != null && mainCamera != null)
-            {
-                healthBarRoot.forward = mainCamera.transform.forward;
-            }
         }
 
         private void HandleWandering()
@@ -268,6 +262,7 @@ namespace RogueliteGame.Enemy
             fillRect.offsetMax = Vector2.zero;
 
             healthBarRoot = canvasGO.transform;
+            canvasGO.AddComponent<RogueliteGame.UI.BillboardToCamera>();
         }
 
         private void EnsureRuntimeReferences()
